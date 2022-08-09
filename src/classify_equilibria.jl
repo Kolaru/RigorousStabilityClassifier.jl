@@ -22,7 +22,8 @@ function classify_equilibria(f, region)
         all(cert) || return X, :unknown
         
         all(sup.(λs) .< 0) && return X, :stable
-        any(inf.(λs) .> 0) && return X, :unstable
+        all(inf.(λs) .> 0) && return X, :unstable
+        any(inf.(λs) .> 0) && return X, :saddle
         return X, :unknown
     end
 end

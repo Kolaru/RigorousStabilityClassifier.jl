@@ -1,5 +1,13 @@
 module RigorousStabilityClassifier
 
-# Write your package code here.
+using ForwardDiff
+using IntervalArithmetic
+using IntervalRootFinding
+using IntervalLinearAlgebra
+
+export classify_equilibria
+
+include("eigen.jl")
+include("classify_equilibria.jl")
 
 end
